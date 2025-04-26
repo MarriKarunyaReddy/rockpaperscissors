@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body.light {
+            background-color: #f0f0f0;
+            color: #000;
+        }
+
+        body.dark {
+            background-color: #121212;
+            color: #fff;
+        }
+
+        header {
+            text-align: center;
+            padding: 2rem;
+            background-color: #00bfa6;
+            color: #fff;
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+
+        .choices {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 3rem;
+            margin: 2rem 0;
+        }
+
+        .choice {
+            height: 150px;
+            width: 150px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid #00bfa6;
+            transition: transform 0.2s ease;
+            cursor: pointer;
+        }
+
+        .choice:hover {
+            opacity: 0.8;
+            transform: scale(1.05);
+        }
+
+        .choice img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .scoreboard {
+            display: flex;
+            justify-content: center;
+            gap: 5rem;
+            margin-top: 2rem;
+            font-size: 1.5rem;
+        }
+
+        .scoreboard p:first-child {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .message,
+        .res,
+        .yourchoice {
+            text-align: center;
+            margin: 1rem;
+            font-size: 1.25rem;
+        }
+
+        #msg {
+            padding: 1rem;
+            background-color: #00bfa6;
+            color: #fff;
+            border-radius: 10px;
+            display: inline-block;
+            transition: opacity 0.3s;
+        }
+
+        #msg:hover {
+            opacity: 0.7;
+        }
+
+        #reset {
+            padding: 0.75rem 2rem;
+            background-color: #333;
+            color: #fff;
+            border-radius: 8px;
+            cursor: pointer;
+            display: inline-block;
+            margin-top: 1rem;
+            transition: opacity 0.3s;
+        }
+
+        #reset:hover {
+            opacity: 0.6;
+        }
+
+        .darklight {
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        #mode {
+            padding: 0.5rem 1.5rem;
+            font-size: 1rem;
+            background-color: #00bfa6;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #mode:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body class="light">
+    <header>ROCK PAPER SCISSORS</header>
+
+    <div class="choices">
+        <div class="choice" id="rock">
+            <img src="./images/rock.jpg" alt="Rock">
+        </div>
+        <div class="choice" id="paper">
+            <img src="./images/paper.jpg" alt="Paper">
+        </div>
+        <div class="choice" id="scissor">
+            <img src="./images/scissor.jpg" alt="Scissor">
+        </div>
+    </div>
+
+    <div class="scoreboard">
+        <div class="user-score">
+            <p id="userscore">0</p>
+            <p id="yourname">USER</p>
+        </div>
+        <div class="comp-score">
+            <p id="compscore">0</p>
+            <p>COMPUTER</p>
+        </div>
+    </div>
+
+    <div class="yourchoice">
+        <p id="yourchoice">Your choice will appear here</p>
+    </div>
+
+    <div class="res">
+        <p id="displaymsg">Result message here</p>
+    </div>
+
+    <div class="message">
+        <p id="msg">Click here to play</p>
+    </div>
+
+    <div class="reset">
+        <p id="reset">Reset Game</p>
+    </div>
+
+    <div class="darklight">
+        <button id="mode">DARK MODE</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
